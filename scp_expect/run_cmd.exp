@@ -1,0 +1,16 @@
+#!/usr/bin/expect -f
+
+set HOST [lindex $argv 0]
+set USER [lindex $argv 1]
+set PASS [lindex $argv 2]
+set FROM [lindex $argv 3]
+set TO [lindex $argv 4]
+set timeout -1
+
+spawn scp -o StrictHostKeyChecking=no $FROM $USER@$HOST:$TO
+match_max 100000
+expect "*?assword:*"
+send -- "$PASS\r"
+send -- "\r"
+expect eof
+
