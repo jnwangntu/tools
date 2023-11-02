@@ -1,9 +1,9 @@
 #!/bin/bash
 
-HOST=$1
-USER=$2
-PASSWD=$3
-REMOTE=$4
+HOST=$1 # 10.71.5.79
+USER=$2 # vagrant
+PASSWD=$3 # vagrant
+REMOTE=$4 # /opt/acn/head
 
 while IFS= read -r line
 do
